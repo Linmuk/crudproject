@@ -1,0 +1,15 @@
+<h1>{% if item %}
+	Update item
+    {% else %}Create item
+{% endif %} </h1>
+
+<form action="" method="post">
+{#    it is compulsory and ensures that the form is protected#}
+    {% csrf_token %}
+    <label for="">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="description">Description:</label>
+    <textarea name="description" id="description"></textarea>
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'item_list' %}">Back to list</a>
